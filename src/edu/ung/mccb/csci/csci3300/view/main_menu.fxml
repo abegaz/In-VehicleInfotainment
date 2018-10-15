@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ung.mccb.csci.csci3300.controller.Controller">
+   <padding>
+      <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+   </padding>
+   <children>
+      <Button layoutX="870.0" layoutY="357.0" mnemonicParsing="false" text="Button">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font></Button>
+      <Button layoutX="508.0" layoutY="545.0" mnemonicParsing="false" text="Button">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Button>
+      <Button layoutX="870.0" layoutY="545.0" mnemonicParsing="false" text="Button">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Button>
+      <Button layoutX="140.0" layoutY="545.0" mnemonicParsing="false" text="Button">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Button>
+      <TextField layoutX="48.0" layoutY="147.0" prefHeight="128.0" prefWidth="1026.0" style="-fx-background-color: #0097A7;" text="Home">
+         <font>
+            <Font name="System Bold" size="60.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <TextField alignment="CENTER_RIGHT" layoutX="93.0" layoutY="14.0" prefHeight="86.0" prefWidth="612.0" promptText="This will display date" style="-fx-background-color: #006064;" text="10/15/2018">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </TextField>
+      <TextField alignment="CENTER_RIGHT" layoutX="706.0" layoutY="14.0" prefHeight="77.0" prefWidth="480.0" promptText="this will display time" style="-fx-background-color: #006064;" text="18:53">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="86.0" fitWidth="87.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/homebuttonpng.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="157.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/musicbutton.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="509.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/mapsbutton.png" />
+         </image></ImageView>
+      <Button layoutX="1007.0" layoutY="700.0" mnemonicParsing="false" style="-fx-background-color: #4DD0E1;" text="Settings">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
