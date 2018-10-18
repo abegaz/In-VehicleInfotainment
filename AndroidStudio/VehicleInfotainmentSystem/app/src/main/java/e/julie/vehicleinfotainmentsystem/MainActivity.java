@@ -1,5 +1,6 @@
 package e.julie.vehicleinfotainmentsystem;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,10 +9,15 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import static e.julie.vehicleinfotainmentsystem.R.layout.activity_main;
+import static e.julie.vehicleinfotainmentsystem.R.layout.music_menu;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
     }
 
@@ -43,4 +50,13 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    public void changeLayout(View v){
+
+        setContentView(R.layout.gps_menu);
+
+    }
+
+
 }

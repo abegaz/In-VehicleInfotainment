@@ -32,19 +32,19 @@
        app:layout_constraintTop_toTopOf="parent"
        app:layout_constraintVertical_bias="0.516" />
 
-   <ImageView
-       android:id="@+id/imageView2"
-       android:layout_width="75dp"
-       android:layout_height="75dp"
-       android:layout_marginStart="8dp"
-       android:layout_marginTop="8dp"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.44"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintVertical_bias="0.25"
-       app:srcCompat="@drawable/musicbutton" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        app:srcCompat="@drawable/musicbutton" />
 
    <ImageView
        android:id="@+id/imageView3"
@@ -57,7 +57,9 @@
        app:layout_constraintHorizontal_bias="0.66"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintVertical_bias="0.26" />
+       app:layout_constraintVertical_bias="0.26"
+       android:onClick="changeLayout"
+       />
 
    <Button
        android:id="@+id/button"
@@ -95,6 +97,7 @@
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toBottomOf="@+id/imageView3"
        app:layout_constraintVertical_bias="1.0" />
+
 
    <Button
        android:id="@+id/button4"
