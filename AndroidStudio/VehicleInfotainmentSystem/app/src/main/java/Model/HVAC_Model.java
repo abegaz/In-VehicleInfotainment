@@ -5,16 +5,15 @@ Date: 10/18/18
 package Model;
 
 public class HVAC_Model {
-    private byte temperature = 0; //temperature of vehicle
+    private int temperature = 0; //temperature of vehicle
     private boolean ac = false, heater = false, recycle_air = false; //all on and off booleans for the rest
 
     //getters and setters for HVAC variables
-    public String getTemperature() {
-        return temperature+"°";
+    public int getTemperature() {
+        return temperature;
     }
 
-    public void setTemperature(String temperature) {
-        this.temperature = Byte.parseByte(temperature.substring(0,temperature.length()-1));
+    public void setTemperature(byte temperature) {
         if(this.temperature>90){this.temperature = 90;}
         else if (this.temperature<50){this.temperature = 50;}
     }
@@ -42,5 +41,8 @@ public class HVAC_Model {
     public void setRecycle_air(boolean recycle_air) {
         this.recycle_air = recycle_air;
     }
+
+
+
 
 }
