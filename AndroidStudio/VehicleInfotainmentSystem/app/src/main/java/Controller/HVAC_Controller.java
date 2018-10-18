@@ -60,13 +60,15 @@ public class HVAC_Controller extends AppCompatActivity {
     }
 
     public void tempIncrease(){
-        hvac.setTemperature((1+Byte.parseByte((String) temperature.getText()));
+        hvac.setTemperature((1+Integer.parseInt((String)temperature.getText()));
         temperature.setText(hvac.getTemperature());
     }
     public void tempDecrease(){
-
+        hvac.setTemperature((Integer.parseInt((String)temperature.getText())-1);
+        temperature.setText(hvac.getTemperature());
     }
     public void setAC(){
+        
 
     }
     public void setHeater(){
