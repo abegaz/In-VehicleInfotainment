@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ung.mccb.csci.csci3300.controller.HVAC_Controller">
+    <padding>
+        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+    </padding>
+    <children>
+        <TextField alignment="BASELINE_CENTER" layoutX="48.0" layoutY="147.0" prefHeight="128.0" prefWidth="1026.0" style="-fx-background-color: #0097A7;" text="HVAC">
+            <font>
+                <Font name="System Bold" size="60.0" />
+            </font>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </TextField>
+        <TextField alignment="CENTER_RIGHT" layoutX="93.0" layoutY="14.0" prefHeight="86.0" prefWidth="612.0" promptText="This will display date" style="-fx-background-color: #006064;" text="10/15/2018">
+            <font>
+                <Font size="40.0" />
+            </font>
+        </TextField>
+        <TextField alignment="CENTER_RIGHT" layoutX="706.0" layoutY="14.0" prefHeight="77.0" prefWidth="480.0" promptText="this will display time" style="-fx-background-color: #006064;" text="18:53">
+            <font>
+                <Font size="40.0" />
+            </font>
+        </TextField>
+        <ImageView fitHeight="86.0" fitWidth="87.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/homebuttonpng.png" />
+            </image>
+        </ImageView>
+      <TextField alignment="CENTER" layoutX="91.0" layoutY="325.0" prefHeight="86.0" prefWidth="105.0" style="-fx-background-color: #12aaba;" text="75">
+         <font>
+            <Font size="36.0" />
+         </font></TextField>
+      <Button alignment="CENTER" layoutX="242.0" layoutY="341.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="138.0" text="Increase">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="411.0" layoutY="341.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Decrease">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <TextField alignment="CENTER" layoutX="91.0" layoutY="440.0" prefHeight="95.0" prefWidth="105.0" style="-fx-background-color: #12aaba;" text="A/C">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </TextField>
+      <ToggleButton layoutX="242.0" layoutY="449.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="138.0" text="Off">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </ToggleButton>
+      <TextField alignment="CENTER" layoutX="91.0" layoutY="563.0" prefHeight="95.0" prefWidth="150.0" style="-fx-background-color: #12aaba;" text="Heater">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </TextField>
+      <ToggleButton layoutX="283.0" layoutY="572.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="138.0" text="Off">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </ToggleButton>
+    </children>
+</AnchorPane>
