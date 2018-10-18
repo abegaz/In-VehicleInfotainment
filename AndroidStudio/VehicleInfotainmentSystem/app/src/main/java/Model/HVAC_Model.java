@@ -1,3 +1,7 @@
+/*
+Author(s): Trevor, Connor
+Date: 10/18/18
+*/
 package Model;
 
 public class HVAC_Model {
@@ -9,8 +13,10 @@ public class HVAC_Model {
         return temperature+"°";
     }
 
-    public void setTemperature(byte temperature) {
-        this.temperature = temperature;
+    public void setTemperature(String temperature) {
+        this.temperature = Byte.parseByte(temperature.substring(0,temperature.length()-1));
+        if(this.temperature>90){this.temperature = 90;}
+        else if (this.temperature<50){this.temperature = 50;}
     }
 
     public boolean isAc() {
