@@ -15,7 +15,7 @@
        android:layout_height="31dp"
        android:layout_marginStart="216dp"
        android:text="TEMPdate"
-       app:layout_constraintBottom_toTopOf="@+id/imageView2"
+       app:layout_constraintBottom_toTopOf="@+id/main_music_button"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"
        app:layout_constraintVertical_bias="0.057" />
@@ -25,7 +25,7 @@
        android:layout_width="242dp"
        android:layout_height="37dp"
        android:text="TempTime"
-       app:layout_constraintBottom_toTopOf="@+id/button"
+       app:layout_constraintBottom_toTopOf="@+id/main_hvac_button"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="0.931"
        app:layout_constraintStart_toEndOf="@+id/textView2"
@@ -33,7 +33,7 @@
        app:layout_constraintVertical_bias="0.516" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/main_music_button"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginStart="8dp"
@@ -44,10 +44,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.25"
+        android:onClick="changeLayout"
         app:srcCompat="@drawable/musicbutton" />
 
    <ImageView
-       android:id="@+id/imageView3"
+       android:id="@+id/main_gps_button"
        android:layout_width="72dp"
        android:layout_height="74dp"
        android:layout_marginTop="8dp"
@@ -61,29 +62,31 @@
        android:onClick="changeLayout"
        />
 
-   <Button
-       android:id="@+id/button"
-       android:layout_width="83dp"
-       android:layout_height="79dp"
-       android:layout_marginTop="8dp"
-       android:layout_marginEnd="116dp"
-       android:layout_marginBottom="8dp"
-       android:text="Button"
-       app:layout_constraintBottom_toTopOf="@+id/button4"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/main_hvac_button"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="8dp"
+        android:text="HVAC"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="changeLayout"
+        />
 
-   <Button
-       android:id="@+id/button2"
-       android:layout_width="86dp"
-       android:layout_height="69dp"
-       android:layout_marginEnd="76dp"
-       android:layout_marginBottom="28dp"
-       android:text="Button"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toStartOf="@+id/button4"
-       app:layout_constraintTop_toBottomOf="@+id/imageView2"
-       app:layout_constraintVertical_bias="0.918" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="86dp"
+        android:layout_height="69dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="28dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintTop_toBottomOf="@+id/main_hvac_button"
+        app:layout_constraintVertical_bias="0.90999997" />
 
    <Button
        android:id="@+id/button3"
@@ -95,7 +98,7 @@
        app:layout_constraintEnd_toStartOf="@+id/button2"
        app:layout_constraintHorizontal_bias="0.42"
        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/imageView3"
+       app:layout_constraintTop_toBottomOf="@+id/main_gps_button"
        app:layout_constraintVertical_bias="1.0" />
 
 

@@ -15,7 +15,12 @@ import android.widget.ImageView;
 import static e.julie.vehicleinfotainmentsystem.R.layout.activity_main;
 import static e.julie.vehicleinfotainmentsystem.R.layout.music_menu;
 
+
+
 public class MainActivity extends AppCompatActivity {
+
+private ImageView main_map_button;
+
 
 
 
@@ -27,7 +32,11 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
+
+
     }
+
+    //this code adds the little settings menu in the top right
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -52,11 +61,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+//this method is used to make the imageViews work. Call this method in the android:onClick in the xml file
+
     public void changeLayout(View v){
 
-        setContentView(R.layout.gps_menu);
+        switch (v.getId()){
 
-    }
+            case R.id.main_gps_button:
+                setContentView(R.layout.gps_menu);
+                break;
+
+            case R.id.main_music_button:
+                setContentView(R.layout.music_menu);
+                break;
+
+            case R.id.main_hvac_button:
+                setContentView(R.layout.hvac_menu);
+                break;
+
+        }
 
 
-}
+}}
