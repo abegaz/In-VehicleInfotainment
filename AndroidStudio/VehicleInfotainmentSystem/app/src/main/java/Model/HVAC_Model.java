@@ -13,7 +13,7 @@ public class HVAC_Model {
         return temperature;
     }
 
-    public void setTemperature(byte temperature) {
+    public void setTemperature(int temperature) {
         if(this.temperature>90){this.temperature = 90;}
         else if (this.temperature<50){this.temperature = 50;}
     }

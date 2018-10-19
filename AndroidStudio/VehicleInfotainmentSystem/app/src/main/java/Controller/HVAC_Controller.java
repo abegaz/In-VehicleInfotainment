@@ -17,22 +17,16 @@ import androidx.appcompat.widget.Toolbar;
 import e.julie.vehicleinfotainmentsystem.R;
 
 public class HVAC_Controller extends AppCompatActivity {
-    TextView temperature;
-    Button tempIncrease, tempDecrease;
-    Switch acSwitch, heaterSwitch, recycleSwitch;
-    HVAC_Model hvac = new HVAC_Model();
+    TextView temperature = findViewById(R.id.invehicle_temp); //temperature display
+    //   Button tempIncrease = findViewById(R.id.temp_increase), tempDecrease = findViewById(R.id.temp_decrease);
+    Switch acSwitch = findViewById(R.id.ac_switch), heaterSwitch = findViewById(R.id.heater_switch), recycleSwitch = findViewById(R.id.recycle_switch); //switches that are used in hvac
+    HVAC_Model hvac = new HVAC_Model(); //setting up the hvac model
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        temperature = findViewById(R.id.invehicle_temp);
-        tempIncrease = findViewById(R.id.temp_increase);
-        tempDecrease = findViewById(R.id.temp_decrease);
-        acSwitch = findViewById(R.id.ac_switch);
-        heaterSwitch = findViewById(R.id.heater_switch);
-        recycleSwitch = findViewById(R.id.recycle_switch);
         setSupportActionBar(toolbar);
 
     }
@@ -60,21 +54,20 @@ public class HVAC_Controller extends AppCompatActivity {
     }
 
     public void tempIncrease(){
-        hvac.setTemperature((1+Integer.parseInt((String)temperature.getText()));
+        hvac.setTemperature(Integer.parseInt((String) temperature.getText())+1);
         temperature.setText(hvac.getTemperature());
     }
     public void tempDecrease(){
-        hvac.setTemperature((Integer.parseInt((String)temperature.getText())-1);
+        hvac.setTemperature(Integer.parseInt((String) temperature.getText())-1);
         temperature.setText(hvac.getTemperature());
     }
     public void setAC(){
-        
-
+        hvac.setAc(acSwitch.isChecked());
     }
     public void setHeater(){
-
+        hvac.setHeater(heaterSwitch.isChecked());
     }
     public void setRecycler(){
-
+        hvac.setRecycle_air(recycleSwitch.isChecked());
     }
 }

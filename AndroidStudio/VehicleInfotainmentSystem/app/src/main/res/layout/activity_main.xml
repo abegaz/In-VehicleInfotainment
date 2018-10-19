@@ -21,7 +21,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/hvac_menu" />
+    <include layout="@layout/main_menu" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
