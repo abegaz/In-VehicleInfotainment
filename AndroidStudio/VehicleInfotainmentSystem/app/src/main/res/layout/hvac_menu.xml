@@ -21,7 +21,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
+<<<<<<< HEAD
         tools:text="90°" />
+=======
+        tools:text="90" />
+>>>>>>> origin/Trevor-branch
 
     <Button
         android:id="@+id/temp-increase"
@@ -34,7 +38,12 @@
         app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toEndOf="@+id/invehicle-temp"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         app:layout_constraintVertical_bias="0.0" />
+=======
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="tempIncrease()"/>
+>>>>>>> origin/Trevor-branch
 
     <Button
         android:id="@+id/temp-decrease"
@@ -48,7 +57,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/temp-increase"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         app:layout_constraintVertical_bias="0.0" />
+=======
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="tempDencrease()"/>
+>>>>>>> origin/Trevor-branch
 
     <Switch
         android:id="@+id/ac-switch"
@@ -64,7 +78,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         app:layout_constraintVertical_bias="0.208" />
+=======
+        app:layout_constraintVertical_bias="0.208"
+        android:onClick="setAC()"/>
+>>>>>>> origin/Trevor-branch
 
     <Switch
         android:id="@+id/heater-switch"
@@ -80,7 +99,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         app:layout_constraintVertical_bias="0.309" />
+=======
+        app:layout_constraintVertical_bias="0.309"
+        android:onClick="setHeater()"/>
+>>>>>>> origin/Trevor-branch
 
     <Switch
         android:id="@+id/recycle-switch"
@@ -96,6 +120,11 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         app:layout_constraintVertical_bias="0.41" />
+=======
+        app:layout_constraintVertical_bias="0.41"
+        android:onClick="setRecycler()"/>
+>>>>>>> origin/Trevor-branch
 
 </androidx.constraintlayout.widget.ConstraintLayout>
