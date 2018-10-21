@@ -1,25 +1,19 @@
-package e.julie.vehicleinfotainmentsystem;
+package bestgroupever.vehicleinfotainmentsystem.Controller.Controller;
 
-import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.view.View;
 import android.widget.ImageView;
 
-import static e.julie.vehicleinfotainmentsystem.R.layout.activity_main;
-import static e.julie.vehicleinfotainmentsystem.R.layout.music_menu;
-
+import bestgroupever.vehicleinfotainmentsystem.R;
 
 
 public class MainActivity extends AppCompatActivity {
 
-private ImageView main_map_button;
+    private ImageView main_map_button;
 
 
 
@@ -79,7 +73,10 @@ private ImageView main_map_button;
                 setContentView(R.layout.hvac_menu);
                 break;
 
+            case R.id.back_button:
+                setContentView(R.layout.activity_main);
+
         }
 
 
-}}
+    }}

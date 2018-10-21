@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -24,7 +24,7 @@
         tools:text="90°" />
 
     <Button
-        android:id="@+id/temp-increase"
+        android:id="@+id/tempincrease"
         android:layout_width="92dp"
         android:layout_height="52dp"
         android:layout_marginEnd="8dp"
@@ -34,8 +34,8 @@
         app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toEndOf="@+id/invehicle-temp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"/>
-       <!-- android:onClick="tempIncrease"-->
+        app:layout_constraintVertical_bias="0.0" />
+    <!-- android:onClick="tempIncrease"-->
 
 
     <Button
@@ -48,11 +48,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/temp-increase"
+        app:layout_constraintStart_toEndOf="@+id/tempincrease"
         app:layout_constraintTop_toTopOf="parent"
 
         app:layout_constraintVertical_bias="0.0" />
-      <!--  android:onClick="tempDencrease()"-->
+    <!--  android:onClick="tempDencrease()"-->
 
 
     <Switch
@@ -70,7 +70,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.208" />
-      <!--  android:onClick="setAC()"/>-->
+    <!--  android:onClick="setAC()"/>-->
 
     <Switch
         android:id="@+id/heater-switch"
@@ -87,7 +87,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.309" />
-        <!--android:onClick="setHeater()"/>-->
+    <!--android:onClick="setHeater()"/>-->
 
 
     <Switch
@@ -104,7 +104,23 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.41" />
-       <!-- android:onClick="setRecycler()"/>-->
+        app:layout_constraintVertical_bias="0.41"
+        />
+ <!--   android:onClick="setRecycler()"/>-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="63dp"
+        android:layout_height="62dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintStart_toEndOf="@+id/temp-decrease"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.032"
+        app:srcCompat="@drawable/backbutton"
+        android:onClick="changeLayout"
+        />
+
+
+</android.support.constraint.ConstraintLayout>

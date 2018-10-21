@@ -2,21 +2,21 @@
 Author(s): Trevor, Connor
 Date: 10/18/18
 */
-package Controller;
+package bestgroupever.vehicleinfotainmentsystem.Controller.Controller;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import Model.HVAC_Model;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import e.julie.vehicleinfotainmentsystem.R;
+import bestgroupever.vehicleinfotainmentsystem.Controller.Controller.HVAC_Model;
+import bestgroupever.vehicleinfotainmentsystem.R;
 
 public class HVAC_Controller extends AppCompatActivity {
+
     TextView temperature = findViewById(R.id.invehicle_temp); //temperature display
     //   Button tempIncrease = findViewById(R.id.temp_increase), tempDecrease = findViewById(R.id.temp_decrease);
     Switch acSwitch = findViewById(R.id.ac_switch), heaterSwitch = findViewById(R.id.heater_switch), recycleSwitch = findViewById(R.id.recycle_switch); //switches that are used in hvac
