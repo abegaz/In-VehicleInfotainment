@@ -1,17 +1,23 @@
 package e.julie.vehicleinfotainmentsystem;
 
+import android.bluetooth.BluetoothAdapter;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-
-import static e.julie.vehicleinfotainmentsystem.R.layout.activity_main;
-
 public class MainActivity extends AppCompatActivity {
+
+    BluetoothAdapter bluetoothAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +25,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Button bluetoothOnOff = (Button) findViewById(R.id.onOffBluetooth);
+
+        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        //Button enables and disables Bluetooth
+        bluetoothOnOff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("Tag", "onClick: enabling/disabling bluetooth.");
+                enableDisableBT();
+            }
+        });
 
     }
 
@@ -43,4 +61,63 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("Tag", "onDestroy: called");
+        unregisterReceiver(broadcastReceiver);
+    }
+
+    //Method to enable bluetooth if not enabled, and conversely
+    protected void enableDisableBT() {
+        if (bluetoothAdapter == null) {
+            Log.d("Tag", "enableDisableBT: Does not have bluetooth capabilities.");
+        }
+
+        if (!bluetoothAdapter.isEnabled()) {
+            Log.d("Tag", "enableDisableBT: enabling bluetooth");
+            Intent enableBluetoothIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivity(enableBluetoothIntent);
+
+            IntentFilter bluetoothIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
+            registerReceiver(broadcastReceiver, bluetoothIntent);
+        }
+
+        if (bluetoothAdapter.isEnabled()) {
+            Log.d("Tag", "enableDisableBT: disabling bluetooth");
+            bluetoothAdapter.disable();
+
+            IntentFilter bluetoothIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
+            registerReceiver(broadcastReceiver, bluetoothIntent);
+        }
+    }
+
+    //Create a BroadcastReceiver for ACTION_FOUND
+    private final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            //When discovery finds a device
+            if (action.equals(BluetoothAdapter.ACTION_STATE_CHANGED)) {
+                final int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, BluetoothAdapter.ERROR);
+
+                //tracks the state of the Bluetooth status
+                switch (state) {
+                    case BluetoothAdapter.STATE_OFF:
+                        Log.d("Tag", "onReceive: STATE OFF");
+                        break;
+                    case BluetoothAdapter.STATE_TURNING_OFF:
+                        Log.d("Tag", "BroadcastReceiver: STATE TURNING OFF");
+                        break;
+                    case BluetoothAdapter.STATE_ON:
+                        Log.d("Tag", "BroadcastReceiver: STATE ON");
+                        break;
+                    case BluetoothAdapter.STATE_TURNING_ON:
+                        Log.d("Tag", "BroadcastReceiver: STATE TURNING ON");
+                        break;
+                }
+            }
+        }
+    };
 }

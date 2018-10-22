@@ -60,13 +60,13 @@
        app:layout_constraintVertical_bias="0.26" />
 
    <Button
-       android:id="@+id/button"
+       android:id="@+id/onOffBluetooth"
        android:layout_width="83dp"
        android:layout_height="79dp"
        android:layout_marginTop="8dp"
        android:layout_marginEnd="116dp"
        android:layout_marginBottom="8dp"
-       android:text="Button"
+       android:text="Enable/Disable Bluetooth"
        app:layout_constraintBottom_toTopOf="@+id/button4"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintTop_toTopOf="parent" />
