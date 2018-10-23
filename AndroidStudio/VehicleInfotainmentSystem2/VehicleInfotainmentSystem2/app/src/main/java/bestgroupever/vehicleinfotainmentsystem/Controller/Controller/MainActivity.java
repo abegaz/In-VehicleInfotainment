@@ -44,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Button bluetoothOnOff = (Button)findViewById(R.id.onOffBluetooth);
+        Button bluetoothOnOff = findViewById(R.id.onOffBluetooth);
+
+        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -169,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+<<<<<<< HEAD
     }}
 
 
@@ -302,3 +305,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 }
 */
+=======
+    }
+}
+>>>>>>> 8314aaba0faed534ce47afad9ad571dac8e177a2
