@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
-        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         //button enables and disables bluetooth
         bluetoothOnOff.setOnClickListener(new View.OnClickListener() {
@@ -89,18 +88,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("Tag", "onDestroy: called");
+        Log.d("tag", "onDestroy: called");
         unregisterReceiver(broadcastReceiver);
     }
 
     //Method to enable bluetooth if not enabled, and conversely
     protected void enableDisableBT() {
         if (bluetoothAdapter == null) {
-            Log.d("Tag", "enableDisableBT: Does not have bluetooth capabilities.");
+            Log.d("tag", "enableDisableBT: Does not have bluetooth capabilities.");
         }
 
         if (!bluetoothAdapter.isEnabled()) {
-            Log.d("Tag", "enableDisableBT: enabling bluetooth");
+            Log.d("tag", "enableDisableBT: enabling bluetooth");
             Intent enableBluetoothIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivity(enableBluetoothIntent);
 
@@ -109,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (bluetoothAdapter.isEnabled()) {
-            Log.d("Tag", "enableDisableBT: disabling bluetooth");
+            Log.d("tag", "enableDisableBT: disabling bluetooth");
             bluetoothAdapter.disable();
 
             IntentFilter bluetoothIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
