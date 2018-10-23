@@ -32,7 +32,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Button bluetoothOnOff = (Button)findViewById(R.id.onOffBluetooth);
+        Button bluetoothOnOff = findViewById(R.id.onOffBluetooth);
+
+        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         //button enables and disables bluetooth
         bluetoothOnOff.setOnClickListener(new View.OnClickListener() {
@@ -155,4 +157,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-    }}
+    }
+}
