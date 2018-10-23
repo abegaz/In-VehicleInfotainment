@@ -72,7 +72,7 @@
         android:onClick="changeLayout"
         android:src="@drawable/hvacbutton"
         android:text="HVAC"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/onOffBluetooth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.617" />
@@ -81,13 +81,13 @@
         android:id="@+id/button2"
         android:layout_width="85dp"
         android:layout_height="69dp"
-        android:layout_marginEnd="76dp"
+        android:layout_marginEnd="56dp"
         android:layout_marginBottom="28dp"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/onOffBluetooth"
         app:layout_constraintTop_toBottomOf="@+id/main_hvac_button"
-        app:layout_constraintVertical_bias="0.90999997" />
+        app:layout_constraintVertical_bias="0.892" />
 
     <Button
         android:id="@+id/button3"
@@ -103,12 +103,12 @@
         app:layout_constraintVertical_bias="0.967" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="80dp"
+        android:id="@+id/onOffBluetooth"
+        android:layout_width="106dp"
         android:layout_height="69dp"
         android:layout_marginEnd="132dp"
         android:layout_marginBottom="32dp"
-        android:text="Button"
+        android:text="Bluetooth"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
