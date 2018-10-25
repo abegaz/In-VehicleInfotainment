@@ -112,4 +112,64 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    //will add the buttons for the gears on this content xml file
+    //Wanted to add it the main, but I think everyone used their own
+    //template, which makes it more complicated for me to edit on each page
+
+    <Button
+        android:id="@+id/park"
+        android:layout_width="38dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="553dp"
+        android:layout_marginTop="126dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/gear_button_background"
+        android:text="P"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/reverse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/reverse"
+        android:layout_width="38dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/gear_button_background"
+        android:text="R"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/neutral"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/onOffBluetooth"
+        app:layout_constraintTop_toBottomOf="@+id/park" />
+
+    <Button
+        android:id="@+id/neutral"
+        android:layout_width="38dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/gear_button_background"
+        android:text="N"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/drive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/onOffBluetooth"
+        app:layout_constraintTop_toBottomOf="@+id/reverse" />
+
+    <Button
+        android:id="@+id/drive"
+        android:layout_width="38dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="381dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/gear_button_background"
+        android:text="D"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/neutral" />
 </android.support.constraint.ConstraintLayout>

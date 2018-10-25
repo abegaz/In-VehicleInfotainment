@@ -20,7 +20,18 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <Button
+        android:id="@+id/park"
+        android:layout_width="36dp"
+        android:layout_height="33dp"
+        android:background="@drawable/gear_button_background_on_click"
+        android:text="p"
+        android:textColor="@android:color/white" />
+
+    <include
+        layout="@layout/content_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 
 </android.support.design.widget.CoordinatorLayout>
