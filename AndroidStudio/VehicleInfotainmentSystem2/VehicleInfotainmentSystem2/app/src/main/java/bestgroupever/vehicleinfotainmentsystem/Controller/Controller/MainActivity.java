@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView main_map_button;
     BluetoothAdapter bluetoothAdapter;
+    Intent intent;
 
 
 
@@ -161,7 +162,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.main_hvac_button:
-                setContentView(R.layout.hvac_menu);
+                intent = new Intent(this, HVACController.class);
+                startActivity(intent);
                 break;
 
             case R.id.back_button:
