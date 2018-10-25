@@ -116,9 +116,8 @@
         app:layout_constraintStart_toEndOf="@+id/temp-decrease"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.032"
-        app:srcCompat="@drawable/backbutton"
-        android:onClick="changeLayout"
-        />
+        app:srcCompat="@drawable/backbutton"/>
+        <!--android:onClick="changeLayout"-->
 
 
 </android.support.constraint.ConstraintLayout>
