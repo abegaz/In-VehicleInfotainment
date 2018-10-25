@@ -30,10 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Controller.Controller.HVACController"
-            android:label="@string/title_activity_hvaccontroller"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Controller.Controller.HVACController"></activity>
     </application>
 
 </manifest>
