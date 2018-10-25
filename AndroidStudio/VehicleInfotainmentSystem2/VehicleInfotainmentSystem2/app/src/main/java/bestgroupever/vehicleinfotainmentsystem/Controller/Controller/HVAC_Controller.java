@@ -18,7 +18,6 @@ import bestgroupever.vehicleinfotainmentsystem.R;
 public class HVAC_Controller extends AppCompatActivity {
 
     TextView temperature = findViewById(R.id.invehicle_temp); //temperature display
-    //   Button tempIncrease = findViewById(R.id.temp_increase), tempDecrease = findViewById(R.id.temp_decrease);
     Switch acSwitch = findViewById(R.id.ac_switch), heaterSwitch = findViewById(R.id.heater_switch), recycleSwitch = findViewById(R.id.recycle_switch); //switches that are used in hvac
     HVAC_Model hvac = new HVAC_Model(); //setting up the hvac model
 
