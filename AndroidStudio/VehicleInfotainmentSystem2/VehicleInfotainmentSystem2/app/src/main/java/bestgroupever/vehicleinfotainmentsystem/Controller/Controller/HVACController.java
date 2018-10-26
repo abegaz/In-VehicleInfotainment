@@ -1,5 +1,6 @@
 package bestgroupever.vehicleinfotainmentsystem.Controller.Controller;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -45,5 +46,8 @@ public class HVACController extends AppCompatActivity {
     }
     public void setRecycler(View view) { //sets hvac model recycle_air boolean to true or false based of the switch's value
         hvac.setRecycle_air(recycleSwitch.isChecked());
+    }
+    public void returnMMenu(View view){
+        startActivity(new Intent(this, MainActivity.class));
     }
 }
