@@ -23,8 +23,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.Calendar;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import bestgroupever.vehicleinfotainmentsystem.R;
@@ -34,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView main_map_button;
     BluetoothAdapter bluetoothAdapter;
+
+    //Creating a calendar object to pull system times and dates for the main display
+
+    Date currentTime = Calendar.getInstance().getTime();
+    TextView time;
 
 
 
@@ -47,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
         Button bluetoothOnOff = findViewById(R.id.onOffBluetooth);
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        //set time in the main menu
+        time = findViewById(R.id.time_view);
+        time.setText(currentTime.toString());
 
 
         //button enables and disables bluetooth
