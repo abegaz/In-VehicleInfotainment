@@ -1,8 +1,11 @@
 package bestgroupever.vehicleinfotainmentsystem.Controller.Controller;
 
 import android.Manifest;
+import android.app.Activity;
+import android.app.admin.DevicePolicyManager;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -13,6 +16,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +27,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.List;
@@ -35,7 +40,11 @@ public class MainActivity extends AppCompatActivity {
     private ImageView main_map_button;
     BluetoothAdapter bluetoothAdapter;
 
+    Button b_park, b_reverse, b_neutral, b_drive; //gear listener varialbles
 
+    static final int RESULT_Enable = 1;
+    DevicePolicyManager devicePolicyManager;
+    ComponentName componentName;
 
 
     @Override
@@ -57,6 +66,88 @@ public class MainActivity extends AppCompatActivity {
                 enableDisableBT();
             }
         });
+
+        //Bryan Cazadero
+        //10/25/2018
+        //lock screen buttons and their respective listeners
+        b_park = (Button) findViewById(R.id.park);
+        b_reverse = (Button) findViewById(R.id.reverse);
+        b_neutral = (Button) findViewById((R.id.neutral1));
+        b_drive = (Button) findViewById(R.id.drive);
+
+        devicePolicyManager = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
+        componentName = new ComponentName(MainActivity.this, Lock_Controller.class);
+
+        boolean active = devicePolicyManager.isAdminActive(componentName);
+        if(active) {
+            b_park.setText('p');
+            b_reverse.setVisibility(View.VISIBLE);
+            b_neutral.setVisibility(View.VISIBLE);
+            b_drive.setVisibility(View.VISIBLE);
+        }
+        else {
+            b_park.setText('P');
+            b_reverse.setVisibility(View.GONE);
+            b_neutral.setVisibility(View.GONE);
+            b_drive.setVisibility(View.GONE);
+        }
+
+        b_park.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean active = devicePolicyManager.isAdminActive(componentName);
+                if(active) {
+                    devicePolicyManager.removeActiveAdmin(componentName);
+                    b_reverse.setVisibility(View.GONE);
+                    b_neutral.setVisibility(View.GONE);
+                    b_drive.setVisibility(View.GONE);
+                }
+                else {
+                    Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+                    intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, componentName);
+                    intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "You should enable the app");
+                }
+            }
+        });
+
+        b_reverse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                devicePolicyManager.lockNow();
+            }
+        });
+
+        b_neutral.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                devicePolicyManager.lockNow();
+            }
+        });
+
+        b_drive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                devicePolicyManager.lockNow();
+            }
+        });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case RESULT_Enable
+                ;
+                if (resultCode == Activity.RESULT_OK){
+                    b_park.setText('p');
+                b_reverse.setVisibility(View.VISIBLE);
+                b_neutral.setVisibility(View.VISIBLE);
+                b_drive.setVisibility(View.VISIBLE);
+        } else {
+            Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();
+        }
+        return;
+
+    }
+    super.onActivityResult(requestCode, resultCode, data);
 
     }
 
@@ -143,8 +234,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
-
-
 
 //this method is used to make the imageViews work. Call this method in the android:onClick in the xml file
 

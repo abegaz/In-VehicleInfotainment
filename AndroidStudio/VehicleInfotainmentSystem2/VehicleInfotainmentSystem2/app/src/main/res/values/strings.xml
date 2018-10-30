@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">VehicleInfotainmentSystem</string>
+    <string name="app_description">YOu should allow VehicleInfotainmentSystem to l ock the screen!</string>
     <string name="action_settings">Settings</string>
 </resources>
