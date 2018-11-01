@@ -2,7 +2,7 @@
 Author(s): Trevor, Connor
 Date: 10/18/18
 */
-package bestgroupever.vehicleinfotainmentsystem.Controller.Controller;
+package bestgroupever.vehicleinfotainmentsystem.Model;
 
 public class HVAC_Model {
     private int temperature = 0; //temperature of vehicle

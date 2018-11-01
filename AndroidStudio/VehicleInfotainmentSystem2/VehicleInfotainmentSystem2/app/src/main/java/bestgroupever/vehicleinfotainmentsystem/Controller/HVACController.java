@@ -1,4 +1,4 @@
-package bestgroupever.vehicleinfotainmentsystem.Controller.Controller;
+package bestgroupever.vehicleinfotainmentsystem.Controller;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import bestgroupever.vehicleinfotainmentsystem.Model.HVAC_Model;
 import bestgroupever.vehicleinfotainmentsystem.R;
 
 public class HVACController extends AppCompatActivity {
