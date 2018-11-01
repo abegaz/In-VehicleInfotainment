@@ -18,13 +18,10 @@ import android.widget.TextView;
 
 import java.util.Calendar;
 
-<<<<<<< HEAD:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/java/bestgroupever/vehicleinfotainmentsystem/Controller/Controller/MainActivity.java
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
-=======
->>>>>>> Trevor-branch:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/java/bestgroupever/vehicleinfotainmentsystem/Controller/MainActivity.java
 import bestgroupever.vehicleinfotainmentsystem.R;
 
 
