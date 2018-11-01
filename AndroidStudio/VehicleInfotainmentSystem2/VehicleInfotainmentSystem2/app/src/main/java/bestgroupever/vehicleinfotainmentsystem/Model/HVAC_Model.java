@@ -2,7 +2,7 @@
 Author(s): Trevor, Connor
 Date: 10/18/18
 */
-package bestgroupever.vehicleinfotainmentsystem.Controller.Controller;
+package bestgroupever.vehicleinfotainmentsystem.Model;
 
 public class HVAC_Model {
     private int temperature = 0; //temperature of vehicle
@@ -14,7 +14,8 @@ public class HVAC_Model {
     }
 
     public void setTemperature(int temperature) { //the if statement inside keeps the temperature from exceeding 90 degrees and from going below 50 degrees
-        if(this.temperature>90){this.temperature = 90;}
+        this.temperature = temperature;
+        if(this.temperature>=90){this.temperature = 90;}
         else if (this.temperature<50){this.temperature = 50;}
     }
 
