@@ -27,12 +27,12 @@ public class HVACController extends AppCompatActivity {
 
     public void tempIncrease(View view){ //set hvac model temperature and then use the value to set the text for the temperature text view (increasing)
 
-        hvac.setTemperature(Integer.parseInt(temperature.getText().toString())+1);
-        temperature.setText(""+hvac.getTemperature());
+        hvac.setTemperature(Integer.parseInt(temperature.getText().toString().substring(0,2))+1);
+        temperature.setText(""+hvac.getTemperature()+"°F");
     }
     public void tempDecrease(View view){ //set hvac model temperature and then use the value to set the text for the temperature text view (decreasing)
-        hvac.setTemperature(Integer.parseInt(temperature.getText().toString())-1);
-        temperature.setText(""+hvac.getTemperature());
+        hvac.setTemperature(Integer.parseInt(temperature.getText().toString().substring(0,2))-1);
+        temperature.setText(""+hvac.getTemperature()+"°F");
     }
     public void setAC(View view){ //sets hvac model ac boolean to true or false based of the switch's value
         hvac.setAc(acSwitch.isChecked());
