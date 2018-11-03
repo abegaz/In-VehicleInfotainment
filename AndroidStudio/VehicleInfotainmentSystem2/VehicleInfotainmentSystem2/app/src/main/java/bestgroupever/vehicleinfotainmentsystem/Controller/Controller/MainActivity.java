@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Button bluetoothOnOff = findViewById(R.id.onOffBluetooth);
+        ImageView bluetoothOnOff = findViewById(R.id.main_menu_settings);
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -179,8 +179,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
 
+            case R.id.main_weather_button:
+                intent = new Intent(this, Weather_Activity.class);
+                startActivity(intent);
+                break;
+
             case R.id.back_button:
                 setContentView(R.layout.activity_main);
+
+
+
 
         }
 
