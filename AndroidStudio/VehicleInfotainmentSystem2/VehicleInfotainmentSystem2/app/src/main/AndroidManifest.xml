@@ -31,15 +31,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
         <activity android:name=".Controller.HVACController"></activity>
-=======
-        <activity android:name=".Controller.Controller.HVACController" />
         <activity
-            android:name=".Controller.Controller.Weather_Activity"
+            android:name=".Model.Weather_Activity"
             android:label="@string/title_activity_weather_"
             android:theme="@style/AppTheme.NoActionBar"></activity>
->>>>>>> David
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package bestgroupever.vehicleinfotainmentsystem.Controller.Controller;
+package bestgroupever.vehicleinfotainmentsystem.Model;
 
 import android.os.AsyncTask;
 

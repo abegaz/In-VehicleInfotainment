@@ -1,4 +1,4 @@
-package bestgroupever.vehicleinfotainmentsystem.Controller.Controller;
+package bestgroupever.vehicleinfotainmentsystem.Model;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import bestgroupever.vehicleinfotainmentsystem.Controller.MainActivity;
 import bestgroupever.vehicleinfotainmentsystem.R;
 
 public class Weather_Activity extends AppCompatActivity {

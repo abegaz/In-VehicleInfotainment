@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
+import bestgroupever.vehicleinfotainmentsystem.Model.Weather_Activity;
 import bestgroupever.vehicleinfotainmentsystem.R;
 
 

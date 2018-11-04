@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Controller.Controller.Weather_Activity"
+    tools:context=".Model.Weather_Activity"
     tools:showIn="@layout/activity_weather">
 
     <ImageView
@@ -22,25 +22,27 @@
         android:id="@+id/tvLow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
+        android:layout_marginStart="80dp"
         android:text="TempLOW"
         android:textColor="@color/whiteText"
+        android:textSize="22dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.828" />
+        app:layout_constraintVertical_bias="0.825" />
 
     <TextView
         android:id="@+id/tvHigh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
+        android:layout_marginStart="44dp"
         android:text="TempHIGH"
         android:textColor="@color/whiteText"
+        android:textSize="22dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvLow"
         app:layout_constraintTop_toBottomOf="@+id/ivCondition"
-        app:layout_constraintVertical_bias="0.514" />
+        app:layout_constraintVertical_bias="0.467" />
 
     <TextView
         android:id="@+id/tvHumidity"
@@ -48,6 +50,7 @@
         android:layout_height="wrap_content"
         android:text="TempHUMIDITY"
         android:textColor="@color/whiteText"
+        android:textSize="22dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
@@ -60,6 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="133dp"
         android:text="TextView"
+        android:textSize="22dp"
         app:layout_constraintBottom_toTopOf="@+id/tvHumidity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
