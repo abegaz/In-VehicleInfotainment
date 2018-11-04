@@ -46,7 +46,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+<<<<<<< HEAD:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/java/bestgroupever/vehicleinfotainmentsystem/Controller/MainActivity.java
         ImageView bluetoothOnOff = findViewById(R.id.main_menu_settings);
+=======
+        //Button bluetoothOnOff = findViewById(R.id.onOffBluetooth);
+>>>>>>> Melanie-branch:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/java/bestgroupever/vehicleinfotainmentsystem/Controller/Controller/MainActivity.java
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -56,13 +60,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         //button enables and disables bluetooth
-        bluetoothOnOff.setOnClickListener(new View.OnClickListener() {
+        /* bluetoothOnOff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("Tag", "onClick: enabling/disabling bluetooth.");
                 enableDisableBT();
             }
-        });
+        }); */
 
     }
 
@@ -159,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         switch (v.getId()){
 
             case R.id.main_gps_button:
-                setContentView(R.layout.gps_menu);
+                setContentView(R.layout.activity_maps);
                 break;
 
             case R.id.main_music_button:
@@ -169,11 +173,14 @@ public class MainActivity extends AppCompatActivity {
             case R.id.main_hvac_button:
                 intent = new Intent(this, HVACController.class);
                 startActivity(intent);
+<<<<<<< HEAD:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/java/bestgroupever/vehicleinfotainmentsystem/Controller/MainActivity.java
                 break;
 
             case R.id.main_weather_button:
                 intent = new Intent(this, Weather_Activity.class);
                 startActivity(intent);
+=======
+>>>>>>> Melanie-branch:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/java/bestgroupever/vehicleinfotainmentsystem/Controller/Controller/MainActivity.java
                 break;
 
             case R.id.back_button:
@@ -188,134 +195,3 @@ public class MainActivity extends AppCompatActivity {
     }}
 
 
-/*
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-
-    private GoogleMap mMap;
-
-    LocationManager locationManager;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        //check
-        if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, new LocationListener() {
-                @Override
-                public void onLocationChanged(Location location) {
-                    // Getting latitude
-                    double latitude = location.getLatitude();
-                    // Getting longitude
-                    double longitude = location.getLongitude();
-                    // Instantiate LatLng class
-                    LatLng latLng = new LatLng(latitude, longitude);
-                    // Instantiate Geocoder class
-                    Geocoder geocoder = new Geocoder(getApplicationContext());
-                    try {
-                        List<Address> addressList = geocoder.getFromLocation(latitude, longitude, 1);
-                        String str = addressList.get(0).getLocality() + ",";
-                        str += addressList.get(0).getCountryName();
-                        mMap.addMarker(new MarkerOptions().position(latLng).title(str));
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10.2f));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-
-                @Override
-                public void onStatusChanged(String provider, int status, Bundle extras) {
-
-                }
-
-                @Override
-                public void onProviderEnabled(String provider) {
-
-                }
-
-                @Override
-                public void onProviderDisabled(String provider) {
-
-                }
-            });
-        } else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, new LocationListener() {
-                @Override
-                public void onLocationChanged(Location location) {
-                    // Getting latitude
-                    double latitude = location.getLatitude();
-                    // Getting longitude
-                    double longitude = location.getLongitude();
-                    // Instantiate LatLng class
-                    LatLng latLng = new LatLng(latitude, longitude);
-                    // Instantiate Geocoder class
-                    Geocoder geocoder = new Geocoder(getApplicationContext());
-                    try {
-                        List<Address> addressList = geocoder.getFromLocation(latitude, longitude, 1);
-                        String str = addressList.get(0).getLocality() + ",";
-                        str += addressList.get(0).getCountryName();
-                        mMap.addMarker(new MarkerOptions().position(latLng).title(str));
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10.2f));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-                @Override
-                public void onStatusChanged(String provider, int status, Bundle extras) {
-
-                }
-
-                @Override
-                public void onProviderEnabled(String provider) {
-
-                }
-
-                @Override
-                public void onProviderDisabled(String provider) {
-
-                }
-            });
-        }
-    }
-
-
-
-
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     *//*
-
-    @Override
-    public void onMapReady (GoogleMap googleMap){
-        mMap = googleMap;
-
-        // Add a marker in Dahlonega and move the camera
-        //LatLng dahlonega = new LatLng(34.5279067, -84.0179191);
-        //mMap.addMarker(new MarkerOptions().position(dahlonega).title("Marker in Dahlonega"));
-        //mMap.moveCamera(CameraUpdateFactory.newLatLng(dahlonega));
-    }
-
-
-*/

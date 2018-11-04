@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
+<<<<<<< HEAD
     tools:context="bestgroupever.vehicleinfotainmentsystem.Controller.MainActivity">
+=======
+    tools:context="bestgroupever.vehicleinfotainmentsystem.Controller.Controller.MainActivity">
+>>>>>>> Melanie-branch
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
