@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
+import bestgroupever.vehicleinfotainmentsystem.Model.MapsActivity;
 import bestgroupever.vehicleinfotainmentsystem.Model.Weather_Activity;
 import bestgroupever.vehicleinfotainmentsystem.R;
 
@@ -46,12 +47,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-<<<<<<< HEAD:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/java/bestgroupever/vehicleinfotainmentsystem/Controller/MainActivity.java
-        ImageView bluetoothOnOff = findViewById(R.id.main_menu_settings);
-=======
-        //Button bluetoothOnOff = findViewById(R.id.onOffBluetooth);
->>>>>>> Melanie-branch:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/java/bestgroupever/vehicleinfotainmentsystem/Controller/Controller/MainActivity.java
 
+        ImageView bluetoothOnOff = findViewById(R.id.main_menu_settings);
+
+        //Button bluetoothOnOff = findViewById(R.id.onOffBluetooth);
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         //set time in the main menu
@@ -164,6 +163,8 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.main_gps_button:
                 setContentView(R.layout.activity_maps);
+           /*     intent = new Intent(this, MapsActivity.class);
+                startActivity(intent);*/
                 break;
 
             case R.id.main_music_button:
@@ -173,14 +174,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.main_hvac_button:
                 intent = new Intent(this, HVACController.class);
                 startActivity(intent);
-<<<<<<< HEAD:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/java/bestgroupever/vehicleinfotainmentsystem/Controller/MainActivity.java
                 break;
 
             case R.id.main_weather_button:
                 intent = new Intent(this, Weather_Activity.class);
                 startActivity(intent);
-=======
->>>>>>> Melanie-branch:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/java/bestgroupever/vehicleinfotainmentsystem/Controller/Controller/MainActivity.java
                 break;
 
             case R.id.back_button:

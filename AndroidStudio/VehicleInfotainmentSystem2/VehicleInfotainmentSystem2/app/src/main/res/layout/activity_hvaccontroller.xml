@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
     tools:context=".Controller.HVACController">
 
     <Switch
@@ -17,49 +16,12 @@
         android:layout_marginBottom="8dp"
         android:text="A/C"
         android:onClick="setAC"
-        android:textColor="@color/whiteText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-<<<<<<< HEAD:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/res/layout/activity_hvaccontroller.xml
         app:layout_constraintVertical_bias="0.208" />
-=======
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="90°" />
-
-    <Button
-        android:id="@+id/temp-increase"
-        android:layout_width="92dp"
-        android:layout_height="52dp"
-        android:layout_marginEnd="8dp"
-        android:text="Increase"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.03"
-        app:layout_constraintStart_toEndOf="@+id/invehicle-temp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:onClick="tempIncrease"/>
-
-
-    <Button
-        android:id="@+id/temp-decrease"
-        android:layout_width="101dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="316dp"
-        android:text="Decrease"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/temp-increase"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:onClick="tempDecrease"/>
-
->>>>>>> Melanie-branch:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/res/layout/hvac_menu.xml
 
     <Switch
         android:id="@+id/recycle-switch"
@@ -71,18 +33,12 @@
         android:layout_marginBottom="8dp"
         android:text="Recycle Air"
         android:onClick="setRecycler"
-        android:textColor="@color/whiteText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-<<<<<<< HEAD:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/res/layout/activity_hvaccontroller.xml
         app:layout_constraintVertical_bias="0.41" />
-=======
-        app:layout_constraintVertical_bias="0.208"
-        android:onClick="setAC"/>
->>>>>>> Melanie-branch:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/res/layout/hvac_menu.xml
 
     <Switch
         android:id="@+id/heater-switch"
@@ -93,19 +49,13 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Heater"
-        android:textColor="@color/whiteText"
         android:onClick="setHeater"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-<<<<<<< HEAD:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/res/layout/activity_hvaccontroller.xml
         app:layout_constraintVertical_bias="0.309" />
-=======
-        app:layout_constraintVertical_bias="0.309"
-        android:onClick="setHeater"/>
->>>>>>> Melanie-branch:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/res/layout/hvac_menu.xml
 
     <TextView
         android:id="@+id/invehicle_temp"
@@ -116,18 +66,12 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="75°F"
-        android:textColor="@color/whiteText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-<<<<<<< HEAD:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/res/layout/activity_hvaccontroller.xml
         app:layout_constraintVertical_bias="0.0" />
-=======
-        app:layout_constraintVertical_bias="0.41"
-        android:onClick="setRecycler"/>
->>>>>>> Melanie-branch:AndroidStudio/VehicleInfotainmentSystem2/VehicleInfotainmentSystem2/app/src/main/res/layout/hvac_menu.xml
 
     <ImageView
         android:id="@+id/back_button"

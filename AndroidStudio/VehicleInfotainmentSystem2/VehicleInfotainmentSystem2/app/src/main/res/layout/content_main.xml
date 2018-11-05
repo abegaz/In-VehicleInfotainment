@@ -5,140 +5,93 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="bestgroupever.vehicleinfotainmentsystem.Controller.MainActivity"
+    tools:context=".Controller.MainActivity"
     tools:showIn="@layout/activity_main">
 
 
-    <TextView
-        android:id="@+id/time_view"
-        android:layout_width="345dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="8dp"
-        android:text="TeampTime"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@color/whiteText"
-        app:layout_constraintBottom_toTopOf="@+id/main_hvac_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.988"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
+        <TextView
+            android:id="@+id/time_view"
+            android:layout_width="345dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="8dp"
+            android:text="TeampTime"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/whiteText"
+            app:layout_constraintBottom_toTopOf="@+id/main_hvac_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.988"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.1" />
 
-    <ImageView
-        android:id="@+id/main_music_button"
-<<<<<<< HEAD
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="56dp"
-=======
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
->>>>>>> Melanie-branch
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:onClick="changeLayout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/main_hvac_button"
-<<<<<<< HEAD
-        app:layout_constraintHorizontal_bias="0.481"
-=======
-        app:layout_constraintHorizontal_bias="0.49"
->>>>>>> Melanie-branch
-        app:layout_constraintStart_toEndOf="@+id/main_gps_button"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/musicbutton" />
+        <ImageView
+            android:id="@+id/main_music_button"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="changeLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/main_hvac_button"
+            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintStart_toEndOf="@+id/main_gps_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/musicbutton" />
 
-    <ImageView
-        android:id="@+id/main_gps_button"
-<<<<<<< HEAD
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="56dp"
-=======
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="64dp"
->>>>>>> Melanie-branch
-        android:onClick="changeLayout"
-        android:src="@drawable/mapsbutton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/main_gps_button"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="96dp"
+            android:layout_marginTop="56dp"
+            android:onClick="changeLayout"
+            android:src="@drawable/mapsbutton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/main_hvac_button"
-<<<<<<< HEAD
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="92dp"
-=======
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="140dp"
->>>>>>> Melanie-branch
-        android:onClick="changeLayout"
-        android:src="@drawable/hvacbutton"
-        android:text="HVAC"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/main_hvac_button"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="92dp"
+            android:onClick="changeLayout"
+            android:src="@drawable/hvacbutton"
+            android:text="HVAC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/main_menu_settings"
-<<<<<<< HEAD
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="32dp"
-        android:onClick="changeLayout"
-=======
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="44dp"
->>>>>>> Melanie-branch
-        android:src="@drawable/settings"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_hvac_button"
-        app:layout_constraintVertical_bias="1.0" />
+        <ImageView
+            android:id="@+id/main_menu_settings"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="92dp"
+            android:layout_marginBottom="32dp"
+            android:onClick="changeLayout"
+            android:src="@drawable/settings"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_hvac_button"
+            app:layout_constraintVertical_bias="1.0" />
 
-    <ImageView
-        android:id="@+id/main_weather_button"
-<<<<<<< HEAD
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="32dp"
-        android:onClick="changeLayout"
-        android:src="@drawable/weather"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/main_menu_settings"
-        app:layout_constraintHorizontal_bias="0.328"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_gps_button"
-        app:layout_constraintVertical_bias="1.0" />
-=======
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="32dp"
-        android:src="@drawable/weather"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/main_menu_settings"
-        app:layout_constraintHorizontal_bias="0.34"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_gps_button"
-        app:layout_constraintVertical_bias="0.815" />
->>>>>>> Melanie-branch
+        <ImageView
+            android:id="@+id/main_weather_button"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="32dp"
+            android:onClick="changeLayout"
+            android:src="@drawable/weather"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/main_menu_settings"
+            app:layout_constraintHorizontal_bias="0.328"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_gps_button"
+            app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

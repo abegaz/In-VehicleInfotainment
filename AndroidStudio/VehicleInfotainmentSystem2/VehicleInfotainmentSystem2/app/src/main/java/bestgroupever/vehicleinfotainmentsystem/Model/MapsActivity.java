@@ -1,4 +1,4 @@
-package bestgroupever.vehicleinfotainmentsystem.Controller.Controller;
+package bestgroupever.vehicleinfotainmentsystem.Model;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -10,6 +10,7 @@ import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -20,6 +21,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.zip.Inflater;
 
 import bestgroupever.vehicleinfotainmentsystem.R;
 
@@ -33,8 +35,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         // gets the SupportMapFragment and get notified when the map is ready to be used
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -149,15 +151,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         //
-        updateLocationUI();
+       /* updateLocationUI();
 
         // gets the location and sets position
-        getDeviceLocation();
+        getDeviceLocation();*/
 
-        // Add a marker in Dahlonega and move the camera
-       // LatLng dahlonega = new LatLng(34.5279067, -84.0179191);
-        //mMap.addMarker(new MarkerOptions().position(dahlonega).title("Marker in Dahlonega"));
-        //mMap.moveCamera(CameraUpdateFactory.newLatLng(dahlonega));
+      /*  Add a marker in Dahlonega and move the camera*/
+       /* LatLng dahlonega = new LatLng(34.5279067, -84.0179191);
+        mMap.addMarker(new MarkerOptions().position(dahlonega).title("Marker in Dahlonega"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(dahlonega));*/
     }
 }
 
