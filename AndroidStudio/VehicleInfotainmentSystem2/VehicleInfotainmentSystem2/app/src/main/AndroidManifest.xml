@@ -9,7 +9,8 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <!-- <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" /> -->
     <application
         android:allowBackup="true"
@@ -30,11 +31,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Controller.HVACController"></activity>
+        <activity android:name=".Controller.HVACController" />
         <activity
             android:name=".Model.Weather_Activity"
             android:label="@string/title_activity_weather_"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -49,7 +50,8 @@
 
         <activity
             android:name=".Model.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".Controller.Spotify"></activity>
     </application>
 
 </manifest>

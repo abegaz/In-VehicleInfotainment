@@ -168,7 +168,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.main_music_button:
-                setContentView(R.layout.music_menu);
+                intent = new Intent(this, Spotify.class);
+                startActivity(intent);
                 break;
 
             case R.id.main_hvac_button:
