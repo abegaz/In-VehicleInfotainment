@@ -1,24 +1,41 @@
 package bestgroupever.vehicleinfotainmentsystem.Controller;
 import bestgroupever.vehicleinfotainmentsystem.R;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.spotify.android.appremote.api.ConnectionParams;
 import com.spotify.android.appremote.api.Connector;
 import com.spotify.android.appremote.api.SpotifyAppRemote;
+import com.spotify.protocol.client.CallResult;
 import com.spotify.protocol.client.Subscription;
+import com.spotify.protocol.types.ImageUri;
 import com.spotify.protocol.types.PlayerState;
 import com.spotify.protocol.types.Track;
+import com.spotify.protocol.types.Uri;
 
 public class Spotify extends AppCompatActivity {
+
+    Intent intent;
 
     private static final String CLIENT_ID = "e9fc1156fec14e98a9d676025ae28857";
     private static final String REDIRECT_URI = "bestgroupever.vehicleinfotainmentsystem.Controller.Controller://callback";
     private SpotifyAppRemote mSpotifyAppRemote;
+    TextView music_info;
+    ImageView album_image;
+    ImageUri imageUri;
+
 
     //ImageButton playButton = (ImageButton) findViewById(R.id.playButton);
 
@@ -29,6 +46,10 @@ public class Spotify extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spotify);
+
+
+
+
 
 
         //trying to set up a connection to the button in the GUI
@@ -43,8 +64,8 @@ public class Spotify extends AppCompatActivity {
 
 
     }
-    /*
-        private void playButtonClicked(){
+
+       /* private void playButtonClicked(){
             //plays a playlist
             mSpotifyAppRemote.getPlayerApi().play("spotify:user:spotify:playlist:37i9dQZF1DX2sUQwD7tbmL");
 
@@ -56,10 +77,10 @@ public class Spotify extends AppCompatActivity {
 
             if(mSpotifyAppRemote..isPaused()){
 
-                //??????
+
             }
-        }
-    */
+        }*/
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -99,8 +120,13 @@ public class Spotify extends AppCompatActivity {
 
     private void connected() {
 
+        music_info = findViewById(R.id.tv_song_info);
+        album_image = findViewById(R.id.album_view);
+
+
+
         // Play a playlist
-        mSpotifyAppRemote.getPlayerApi().play("spotify:user:spotify:playlist:37i9dQZF1DX2sUQwD7tbmL");
+        mSpotifyAppRemote.getPlayerApi().play("spotify:user:spotify:playlist:37i9dQZF1E35wPm8FVh0t8");
 
         // Subscribe to PlayerState
         mSpotifyAppRemote.getPlayerApi()
@@ -111,10 +137,39 @@ public class Spotify extends AppCompatActivity {
                         final Track track = playerState.track;
                         if (track != null) {
                             Log.d("Spotify", track.name + " by " + track.artist.name);
+                            music_info.setText(track.name + " by " + track.artist.name);
+
+                         // AHHHHH   Bitmap bitmap = MediaStore.Images.Media.getBitmap(.getContentResolver(), uri);
+
+
+
+
                         }
                     }
                 });
     }
+    public void interact(View v){
 
+        switch (v.getId()){
+
+
+            case R.id.back_button:
+                SpotifyAppRemote.disconnect(mSpotifyAppRemote);
+                intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.playButton:
+                mSpotifyAppRemote.getPlayerApi().play("spotify:user:spotify:playlist:37i9dQZF1DX2sUQwD7tbmL");
+                break;
+
+
+
+
+
+        }
+
+
+    }
 }
 
