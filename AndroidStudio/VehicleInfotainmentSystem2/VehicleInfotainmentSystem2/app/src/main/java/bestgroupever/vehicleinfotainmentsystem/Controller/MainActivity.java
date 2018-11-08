@@ -15,30 +15,29 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
-
 import bestgroupever.vehicleinfotainmentsystem.Model.MapsActivity;
 import bestgroupever.vehicleinfotainmentsystem.Model.Weather_Activity;
 import bestgroupever.vehicleinfotainmentsystem.R;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView main_map_button;
     BluetoothAdapter bluetoothAdapter;
     Intent intent;
 
+
     //Creating a calendar object to pull system times and dates for the main display
 
     Date currentTime = Calendar.getInstance().getTime();
     TextView time;
-
-
 
 
     @Override
@@ -47,6 +46,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //Gear listeners created by Bryan Cazadero
+
+        Button parkbtn = findViewById(R.id.park);
+        Button reversebtn = findViewById(R.id.reverse);
+        Button neutral1btn = findViewById(R.id.neutral1);
+        Button drivebtn = findViewById(R.id.drive);
+
+
+        parkbtn.setOnClickListener(this);
+        reversebtn.setOnClickListener(this);
+        neutral1btn.setOnClickListener(this);
+        drivebtn.setOnClickListener(this);
+
+
 
         ImageView bluetoothOnOff = findViewById(R.id.main_menu_settings);
 
@@ -190,6 +204,25 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-    }}
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.park:
+                Toast.makeText(this,"user interface is now enabled", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.reverse:
+                Toast.makeText(this,"user interface is now disabled", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.neutral1:
+                Toast.makeText(this,"user interface is now enabled", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.drive:
+                Toast.makeText(this,"user interface is now disabled", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+}
 
 

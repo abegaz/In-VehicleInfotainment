@@ -94,4 +94,72 @@
             app:layout_constraintTop_toBottomOf="@+id/main_gps_button"
             app:layout_constraintVertical_bias="1.0" />
 
+    //Bryan Cazadero
+    //10/30/18
+    //will add the buttons for the gears on this content xml file
+    //Wanted to add it the main, but I think everyone used their own
+    //template, which makes it more complicated for me to edit on each page
+
+    <Button
+        android:id="@+id/park"
+        android:layout_width="38dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="127dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/background_park_button"
+        android:onClick="changeBackground"
+        android:text="P"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/reverse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/main_menu_settings"
+        app:layout_constraintTop_toBottomOf="@+id/time_view" />
+
+    <Button
+        android:id="@+id/reverse"
+        android:layout_width="38dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/background_gear_button"
+        android:onClick="changeBackground"
+        android:text="R"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/neutral1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/main_menu_settings"
+        app:layout_constraintTop_toBottomOf="@+id/park"
+        tools:ignore="NotSibling" />
+
+    <Button
+        android:id="@+id/neutral1"
+        android:layout_width="38dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/background_gear_button"
+        android:onClick="changeBackground"
+        android:text="N"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/drive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/main_menu_settings"
+        app:layout_constraintTop_toBottomOf="@+id/reverse" />
+
+    <Button
+        android:id="@+id/drive"
+        android:layout_width="38dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/background_gear_button"
+        android:onClick="changeBackground"
+        android:text="D"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/main_menu_settings"
+        app:layout_constraintTop_toBottomOf="@+id/neutral1" />
+
 </android.support.constraint.ConstraintLayout>
