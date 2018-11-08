@@ -14,11 +14,11 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.spotify.android.appremote.api.ConnectionParams;
 import com.spotify.android.appremote.api.Connector;
 import com.spotify.android.appremote.api.SpotifyAppRemote;
-import com.spotify.protocol.client.CallResult;
 import com.spotify.protocol.client.Subscription;
 import com.spotify.protocol.types.ImageUri;
 import com.spotify.protocol.types.PlayerState;
@@ -35,7 +35,10 @@ public class Spotify extends AppCompatActivity {
     TextView music_info;
     ImageView album_image;
     ImageUri imageUri;
+    //private TextView mRecentErrorView;
 
+    //private final ErrorCallback mErrorCallback = throwable -> logError(throwable, "Boom!");
+    //private static final String TAG = Spotify.class.getSimpleName();
 
     //ImageButton playButton = (ImageButton) findViewById(R.id.playButton);
 
@@ -51,7 +54,7 @@ public class Spotify extends AppCompatActivity {
 
 
 
-
+        /*
         //trying to set up a connection to the button in the GUI
         ImageButton playButton = findViewById(R.id.playButton);
 
@@ -61,25 +64,9 @@ public class Spotify extends AppCompatActivity {
                 //playButtonClicked();
             }
         });
-
+        */
 
     }
-
-       /* private void playButtonClicked(){
-            //plays a playlist
-            mSpotifyAppRemote.getPlayerApi().play("spotify:user:spotify:playlist:37i9dQZF1DX2sUQwD7tbmL");
-
-            mSpotifyAppRemote.getPlayerApi()
-                    .subscribeToPlayerState()
-                    .setEventCallback(new Subscription.EventCallback<PlayerState>() {
-
-                    }
-
-            if(mSpotifyAppRemote..isPaused()){
-
-
-            }
-        }*/
 
     @Override
     protected void onStart() {
@@ -163,13 +150,28 @@ public class Spotify extends AppCompatActivity {
                 mSpotifyAppRemote.getPlayerApi().play("spotify:user:spotify:playlist:37i9dQZF1DX2sUQwD7tbmL");
                 break;
 
+            case R.id.nextTrack:
+                mSpotifyAppRemote.getPlayerApi().skipNext();
+                break;
 
-
-
-
+            case R.id.previousTrack:
+                mSpotifyAppRemote.getPlayerApi().skipPrevious();
+                break;
         }
 
 
     }
+/*
+    private void logError(Throwable t, String msg) {
+        Toast.makeText(this, "Error: " + msg, Toast.LENGTH_SHORT).show();
+        Log.e(TAG, msg, t);
+        mRecentErrorView.setText(String.valueOf(t));
+    }
+
+    private void logMessage(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        Log.d(TAG, msg);
+    }
+*/
 }
 

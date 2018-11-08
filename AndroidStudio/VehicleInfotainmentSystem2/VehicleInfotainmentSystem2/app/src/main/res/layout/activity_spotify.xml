@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
 
-    <EditText
+    <TextView
         android:id="@+id/currentMusicTime"
         android:layout_width="34dp"
         android:layout_height="10dp"
@@ -15,7 +15,9 @@
         android:layout_marginEnd="6dp"
         android:layout_marginBottom="62dp"
         android:ems="10"
-        android:inputType="time"
+        android:text="TEMPCurrTime"
+        android:textColor="@color/whiteText"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/seekBar"
         app:layout_constraintHorizontal_bias="0.0"
@@ -40,74 +42,48 @@
         android:id="@+id/playButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="165dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="15dp"
         android:onClick="interact"
         app:layout_constraintBottom_toTopOf="@+id/seekBar"
-        app:layout_constraintEnd_toStartOf="@+id/forwardButton"
-        app:layout_constraintStart_toEndOf="@+id/rewindButton"
+        app:layout_constraintEnd_toStartOf="@+id/nextTrack"
+        app:layout_constraintStart_toEndOf="@+id/previousTrack"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_media_play" />
-
-    <ImageButton
-        android:id="@+id/forwardButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="165dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar"
-        app:layout_constraintEnd_toStartOf="@+id/nextTrack"
-        app:layout_constraintStart_toEndOf="@+id/playButton"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_media_ff" />
 
     <ImageButton
         android:id="@+id/nextTrack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="165dp"
-        android:layout_marginEnd="106dp"
+        android:layout_marginEnd="160dp"
         android:layout_marginBottom="15dp"
+        android:onClick="interact"
         app:layout_constraintBottom_toTopOf="@+id/seekBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/forwardButton"
+        app:layout_constraintStart_toEndOf="@+id/playButton"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_media_next" />
-
-    <ImageButton
-        android:id="@+id/rewindButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="165dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar"
-        app:layout_constraintEnd_toStartOf="@+id/playButton"
-        app:layout_constraintStart_toEndOf="@+id/previousTrack"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_media_rew" />
 
     <ImageButton
         android:id="@+id/previousTrack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="106dp"
+        android:layout_marginStart="160dp"
         android:layout_marginTop="165dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="15dp"
+        android:onClick="interact"
         app:layout_constraintBottom_toTopOf="@+id/seekBar"
-        app:layout_constraintEnd_toStartOf="@+id/rewindButton"
+        app:layout_constraintEnd_toStartOf="@+id/playButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_media_rew" />
+        app:srcCompat="@android:drawable/ic_media_previous" />
 
-    <EditText
+    <TextView
         android:id="@+id/trackLength"
         android:layout_width="34dp"
         android:layout_height="10dp"
@@ -115,8 +91,11 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="110dp"
         android:layout_marginBottom="62dp"
+        android:autoText="false"
         android:ems="10"
-        android:inputType="time"
+        android:text="TEMPTrackLen"
+        android:textColor="@color/whiteText"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/seekBar"
