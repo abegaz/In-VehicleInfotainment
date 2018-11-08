@@ -4,5 +4,9 @@
     <string name="title_activity_hvaccontroller">HVACController</string>
     <string name="title_activity_weather_">Weather_Activity</string>
     <string name="title_activity_maps">Map</string>
+    <string name="hvac_ac">A/C</string>
+    <string name="hvac_recycle">Recycle Air</string>
+    <string name="hvac_heater">Heater</string>
+
 
 </resources>
