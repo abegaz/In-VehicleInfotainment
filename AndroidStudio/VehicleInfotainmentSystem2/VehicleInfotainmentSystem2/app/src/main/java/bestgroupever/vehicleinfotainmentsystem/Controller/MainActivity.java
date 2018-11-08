@@ -185,11 +185,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 setContentView(R.layout.activity_maps);
            /*     intent = new Intent(this, MapsActivity.class);
                 startActivity(intent);*/}
+                else{
+                   Toast.makeText(this,"You are now driving! It is not safe to use this infotainment system.", Toast.LENGTH_LONG).show();
+               }
                 break;
 
             case R.id.main_music_button:
                 if (isSafe == true) {
                 setContentView(R.layout.music_menu);}
+                else{
+                    Toast.makeText(this,"You are now driving! It is not safe to use this infotainment system.", Toast.LENGTH_LONG).show();
+                }
                 break;
 
             case R.id.main_hvac_button:
@@ -201,6 +207,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (isSafe ==true) {
                 intent = new Intent(this, Weather_Activity.class);
                 startActivity(intent);}
+                else{
+                    Toast.makeText(this,"You are now driving! It is not safe to use this infotainment system.", Toast.LENGTH_LONG).show();
+                }
                 break;
 
             case R.id.back_button:
