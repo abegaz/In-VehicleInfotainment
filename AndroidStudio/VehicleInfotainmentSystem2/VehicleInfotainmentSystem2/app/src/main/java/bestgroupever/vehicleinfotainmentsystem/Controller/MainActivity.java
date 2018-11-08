@@ -192,7 +192,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.main_music_button:
                 if (isSafe == true) {
-                setContentView(R.layout.music_menu);}
+                setContentView(R.layout.music_menu);
+                intent = new Intent(this, Spotify.class);
+                startActivity(intent);}
                 else{
                     Toast.makeText(this,"You are now driving! It is not safe to use this infotainment system.", Toast.LENGTH_LONG).show();
                 }
