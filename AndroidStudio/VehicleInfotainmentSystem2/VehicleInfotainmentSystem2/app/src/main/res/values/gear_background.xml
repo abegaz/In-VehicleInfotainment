@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <color name="button_pressed" tools:ignore="ReferenceType">@drawable/background_button_on_click</color>
+    <color name="button_default" tools:ignore="ReferenceType">@drawable/background_gear_button</color>
+</resources>
