@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Date currentTime = Calendar.getInstance().getTime();
     TextView time;
+    public Boolean isSafe = true;
 
 
     @Override
@@ -59,6 +60,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         reversebtn.setOnClickListener(this);
         neutral1btn.setOnClickListener(this);
         drivebtn.setOnClickListener(this);
+
+        //boolean blocking user interface
+
+        Boolean isSafe = true;
 
 
 
@@ -176,13 +181,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
 
             case R.id.main_gps_button:
+               if (isSafe == true){
                 setContentView(R.layout.activity_maps);
            /*     intent = new Intent(this, MapsActivity.class);
-                startActivity(intent);*/
+                startActivity(intent);*/}
                 break;
 
             case R.id.main_music_button:
-                setContentView(R.layout.music_menu);
+                if (isSafe == true) {
+                setContentView(R.layout.music_menu);}
                 break;
 
             case R.id.main_hvac_button:
@@ -191,8 +198,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.main_weather_button:
+                if (isSafe ==true) {
                 intent = new Intent(this, Weather_Activity.class);
-                startActivity(intent);
+                startActivity(intent);}
                 break;
 
             case R.id.back_button:
@@ -211,15 +219,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.park:
                 Toast.makeText(this,"user interface is now enabled", Toast.LENGTH_SHORT).show();
+                isSafe =true;
                 break;
             case R.id.reverse:
                 Toast.makeText(this,"user interface is now disabled", Toast.LENGTH_SHORT).show();
+                isSafe = false;
                 break;
             case R.id.neutral1:
                 Toast.makeText(this,"user interface is now enabled", Toast.LENGTH_SHORT).show();
+                isSafe = true;
                 break;
             case R.id.drive:
                 Toast.makeText(this,"user interface is now disabled", Toast.LENGTH_SHORT).show();
+                isSafe = false;
                 break;
         }
     }

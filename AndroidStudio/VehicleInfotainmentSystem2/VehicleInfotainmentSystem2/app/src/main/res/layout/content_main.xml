@@ -97,8 +97,6 @@
     //Bryan Cazadero
     //10/30/18
     //will add the buttons for the gears on this content xml file
-    //Wanted to add it the main, but I think everyone used their own
-    //template, which makes it more complicated for me to edit on each page
 
     <Button
         android:id="@+id/park"
@@ -107,8 +105,7 @@
         android:layout_marginStart="53dp"
         android:layout_marginTop="127dp"
         android:layout_marginEnd="1dp"
-        android:background="@drawable/background_park_button"
-        android:onClick="changeBackground"
+        android:background="@drawable/gear_background"
         android:text="P"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/reverse"
@@ -122,8 +119,7 @@
         android:layout_height="36dp"
         android:layout_marginStart="54dp"
         android:layout_marginBottom="1dp"
-        android:background="@drawable/background_gear_button"
-        android:onClick="changeBackground"
+        android:background="@drawable/gear_background"
         android:text="R"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/neutral1"
@@ -138,8 +134,7 @@
         android:layout_height="36dp"
         android:layout_marginStart="54dp"
         android:layout_marginTop="1dp"
-        android:background="@drawable/background_gear_button"
-        android:onClick="changeBackground"
+        android:background="@drawable/gear_background"
         android:text="N"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/drive"
@@ -153,8 +148,7 @@
         android:layout_height="36dp"
         android:layout_marginStart="53dp"
         android:layout_marginEnd="1dp"
-        android:background="@drawable/background_gear_button"
-        android:onClick="changeBackground"
+        android:background="@drawable/gear_background"
         android:text="D"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
