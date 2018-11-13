@@ -1,25 +1,36 @@
-package bestgroupever.vehicleinfotainmentsystem.Controller;
+package bestgroupever.vehicleinfotainmentsystem.Controller.Controller;
 
+import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Calendar;
 
+import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
-import bestgroupever.vehicleinfotainmentsystem.Model.Weather_Activity;
 import bestgroupever.vehicleinfotainmentsystem.R;
 
 
@@ -43,10 +54,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        ImageView bluetoothOnOff = findViewById(R.id.main_menu_settings);
-
         //Button bluetoothOnOff = findViewById(R.id.onOffBluetooth);
+
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         //set time in the main menu
@@ -158,9 +167,7 @@ public class MainActivity extends AppCompatActivity {
         switch (v.getId()){
 
             case R.id.main_gps_button:
-                //setContentView(R.layout.activity_maps);
-                intent = new Intent(this, MapsActivity.class);
-                startActivity(intent);
+                setContentView(R.layout.activity_maps);
                 break;
 
             case R.id.main_music_button:
@@ -172,16 +179,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
 
-            case R.id.main_weather_button:
-                intent = new Intent(this, Weather_Activity.class);
-                startActivity(intent);
-                break;
-
             case R.id.back_button:
                 setContentView(R.layout.activity_main);
-
-
-
 
         }
 

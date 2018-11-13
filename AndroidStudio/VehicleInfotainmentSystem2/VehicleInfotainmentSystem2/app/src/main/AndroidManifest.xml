@@ -3,13 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="bestgroupever.vehicleinfotainmentsystem">
 
+
     <uses-feature android:name="android.hardware.bluetooth" />
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    // 5 permissions for maps
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+
     <!-- <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" /> -->
     <application
         android:allowBackup="true"
@@ -45,11 +50,13 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyBFys6N2wRWPJBk10PSEf8KzAemFVKXW4E" />
 
         <activity
-            android:name=".Model.MapsActivity"
+            android:name=".Controller.MapsActivity"
             android:label="@string/title_activity_maps"></activity>
+
+
     </application>
 
 </manifest>
