@@ -22,7 +22,7 @@ import java.util.Calendar;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
-import bestgroupever.vehicleinfotainmentsystem.Model.MapsActivity;
+import bestgroupever.vehicleinfotainmentsystem.Controller.MapsActivity;
 import bestgroupever.vehicleinfotainmentsystem.Model.Weather_Activity;
 import bestgroupever.vehicleinfotainmentsystem.R;
 

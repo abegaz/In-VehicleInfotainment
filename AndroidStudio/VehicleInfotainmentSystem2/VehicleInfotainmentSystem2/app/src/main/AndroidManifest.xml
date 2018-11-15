@@ -46,11 +46,11 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyBFys6N2wRWPJBk10PSEf8KzAemFVKXW4E" />
 
         <activity
-            android:name=".Model.MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:name=".Controller.MapsActivity"
+            android:label="Map" />
         <activity android:name=".Controller.Spotify"></activity>
     </application>
 
