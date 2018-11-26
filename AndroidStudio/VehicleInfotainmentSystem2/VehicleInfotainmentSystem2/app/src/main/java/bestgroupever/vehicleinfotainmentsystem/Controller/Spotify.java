@@ -3,63 +3,43 @@ import bestgroupever.vehicleinfotainmentsystem.R;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.provider.MediaStore;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.spotify.android.appremote.api.ConnectionParams;
 import com.spotify.android.appremote.api.Connector;
 import com.spotify.android.appremote.api.SpotifyAppRemote;
-import com.spotify.protocol.client.CallResult;
 import com.spotify.protocol.client.ErrorCallback;
 import com.spotify.protocol.client.Subscription;
-import com.spotify.protocol.types.ImageUri;
 import com.spotify.protocol.types.PlayerState;
 import com.spotify.protocol.types.Track;
-import com.spotify.protocol.types.Uri;
 
 public class Spotify extends AppCompatActivity {
-
-    Intent intent;
 
     private static final String CLIENT_ID = "e9fc1156fec14e98a9d676025ae28857";
     private static final String REDIRECT_URI = "bestgroupever.vehicleinfotainmentsystem.Controller.Controller://callback";
     private static final String PLAYLIST_URI = "spotify:user:spotify:playlist:37i9dQZF1E35wPm8FVh0t8";
-
+    private static final String TAG = Spotify.class.getSimpleName();
+    private final ErrorCallback mErrorCallback = throwable -> logError(throwable, "Boom!");
     private SpotifyAppRemote mSpotifyAppRemote;
+    private TrackProgressBar mTrackProgressBar;
+    private SeekBar mSeekBar;
     private int count = 0; //counts how many times play button is pressed
-
+    private TextView mRecentErrorView;
+    Intent intent;
     TextView music_info;
     ImageView album_image;
-    //ImageButton playButton = (ImageButton)findViewById(R.id.playButton);
-    ImageUri imageUri;
-    private TextView mRecentErrorView;
-
-    private final ErrorCallback mErrorCallback = throwable -> logError(throwable, "Boom!");
-    private static final String TAG = Spotify.class.getSimpleName();
-
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spotify);
-
-
-        //mConnect = findViewById(R.id.connect);
     }
 
     @Override
@@ -76,12 +56,10 @@ public class Spotify extends AppCompatActivity {
 
                     public void onConnected(SpotifyAppRemote spotifyAppRemote) {
                         mSpotifyAppRemote = spotifyAppRemote;
-                        //Spotify.this.onConnected();
                         Log.d("Spotify", "Connected! Yay!");
 
                         // Now you can start interacting with App Remote
                         connected();
-
                     }
 
                     public void onFailure(Throwable throwable) {
@@ -98,8 +76,6 @@ public class Spotify extends AppCompatActivity {
         SpotifyAppRemote.disconnect(mSpotifyAppRemote);
     }
 
-
-
     private void connected() {
 
         music_info = findViewById(R.id.tv_song_info);
@@ -109,29 +85,33 @@ public class Spotify extends AppCompatActivity {
         mSpotifyAppRemote.getPlayerApi()
                 .subscribeToPlayerState()
                 .setEventCallback(new Subscription.EventCallback<PlayerState>() {
-
                     public void onEvent(PlayerState playerState) {
                         final Track track = playerState.track;
                         if (playerState.track != null) {
                             Log.d("Spotify", track.name + " by " + track.artist.name);
                             music_info.setText(track.name + " by " + track.artist.name);
 
-                         // AHHHHH   Bitmap bitmap = MediaStore.Images.Media.getBitmap(.getContentResolver(), uri);
                             mSpotifyAppRemote.getImagesApi()
                                     .getImage(track.imageUri)
                                     .setResultCallback(bitmap -> album_image.setImageBitmap(bitmap));
 
-
-
-
+                            mTrackProgressBar.setDuration(playerState.track.duration);
+                            mTrackProgressBar.update(playerState.playbackPosition);
                         }
+
+                        if (playerState.playbackSpeed > 0) {
+                            mTrackProgressBar.unpause();
+                        } else {
+                            mTrackProgressBar.pause();
+                        }
+
                     }
                 });
     }
+
     public void interact(View v){
 
         switch (v.getId()){
-
 
             case R.id.back_button:
                 SpotifyAppRemote.disconnect(mSpotifyAppRemote);
@@ -139,18 +119,15 @@ public class Spotify extends AppCompatActivity {
                 startActivity(intent);
                 break;
         }
-
-
     }
 
     public void onPlayButtonClicked(View playButton) {
         // Play or resume position
-        count++;
-        if (count == 1)
+        if (count == 0) {
             playUri(PLAYLIST_URI);
-        else
+            count++;
+        } else
             mSpotifyAppRemote.getPlayerApi().resume();
-
     }
 
     public void onPauseButtonClicked(View pauseButton) {
@@ -166,6 +143,61 @@ public class Spotify extends AppCompatActivity {
     public void onSkipPreviousButtonClicked(View previousTrack) {
         // skips to previous track
         mSpotifyAppRemote.getPlayerApi().skipPrevious();
+    }
+
+    public class TrackProgressBar {
+
+        private static final int LOOP_DURATION = 500;
+        private final SeekBar mSeekBar;
+        private final Handler mHandler;
+
+        private final SeekBar.OnSeekBarChangeListener mSeekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                mSpotifyAppRemote.getPlayerApi().seekTo(seekBar.getProgress())
+                        .setErrorCallback(mErrorCallback);
+            }
+        };
+
+        private final Runnable mSeekRunnable = new Runnable() {
+            @Override
+            public void run() {
+                int progress = mSeekBar.getProgress();
+                mSeekBar.setProgress(progress + LOOP_DURATION);
+                mHandler.postDelayed(mSeekRunnable, LOOP_DURATION);
+            }
+        };
+
+        private TrackProgressBar(SeekBar seekBar) {
+            mSeekBar = seekBar;
+            mSeekBar.setOnSeekBarChangeListener(mSeekBarChangeListener);
+            mHandler = new Handler();
+        }
+
+        private void setDuration(long duration) {
+            mSeekBar.setMax((int) duration);
+        }
+
+        private void update(long progress) {
+            mSeekBar.setProgress((int) progress);
+        }
+
+        private void pause() {
+            mHandler.removeCallbacks(mSeekRunnable);
+        }
+
+        private void unpause() {
+            mHandler.removeCallbacks(mSeekRunnable);
+            mHandler.postDelayed(mSeekRunnable, LOOP_DURATION);
+        }
     }
 
     private void playUri(String uri){
@@ -185,7 +217,4 @@ public class Spotify extends AppCompatActivity {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         Log.d(TAG, msg);
     }
-
-
-
 }
