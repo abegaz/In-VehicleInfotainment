@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +34,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView main_map_button;
     BluetoothAdapter bluetoothAdapter;
     Intent intent;
+
+    //variables needed for brightness seakbar
+    //Bryan Cazadero
+
+    SeekBar lightBar;
+    Context context;
+    int Sbrightness;
 
 
     //Creating a calendar object to pull system times and dates for the main display
@@ -61,12 +70,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         neutral1btn.setOnClickListener(this);
         drivebtn.setOnClickListener(this);
 
-        //boolean blocking user interface
+        //Bryan Cazadero: necessary code for screen brightness
+        lightBar = (SeekBar) findViewById(R.id.seekBar);
+        context = getApplicationContext();
 
-        Boolean isSafe = true;
+        Sbrightness = Settings.System.getInt(context.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, 0);
 
+        lightBar.setProgress(Sbrightness);
+        lightBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int l, boolean b) {
+                //change brightness when seekbar is moved.
+                Settings.System.putInt(context.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, l);
+            }
 
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
 
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
         ImageView bluetoothOnOff = findViewById(R.id.main_menu_settings);
 
         //Button bluetoothOnOff = findViewById(R.id.onOffBluetooth);
@@ -181,12 +208,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
 
             case R.id.main_gps_button:
-               if (isSafe == true){
+               if (isSafe == true){ //placed on each button in the main allowing limited UI
                 setContentView(R.layout.activity_maps);
            /*     intent = new Intent(this, MapsActivity.class);
                 startActivity(intent);*/}
                 else{
-                   Toast.makeText(this,"You are now driving! It is not safe to use this infotainment system.", Toast.LENGTH_LONG).show();
+                   Toast.makeText(this,"You are now driving! It is not safe to use this infotainment system.", Toast.LENGTH_SHORT).show();
                }
                 break;
 
@@ -196,13 +223,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(this, Spotify.class);
                 startActivity(intent);}
                 else{
-                    Toast.makeText(this,"You are now driving! It is not safe to use this infotainment system.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"You are now driving! It is not safe to use this infotainment system.", Toast.LENGTH_SHORT).show();
                 }
                 break;
 
             case R.id.main_hvac_button:
+                if (isSafe == true) {
                 intent = new Intent(this, HVACController.class);
-                startActivity(intent);
+                startActivity(intent);}
+                else{
+                Toast.makeText(this,"You are now driving! It is not safe to use this infotainment system.", Toast.LENGTH_SHORT).show();
+            }
                 break;
 
             case R.id.main_weather_button:
@@ -210,7 +241,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(this, Weather_Activity.class);
                 startActivity(intent);}
                 else{
-                    Toast.makeText(this,"You are now driving! It is not safe to use this infotainment system.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"You are now driving! It is not safe to use this infotainment system.", Toast.LENGTH_SHORT).show();
+                }
+                break;
+
+            case R.id.main_menu_settings:
+                if (isSafe == true) {
+                    intent = new Intent(this, Settings.class);
+                    startActivity(intent);}
+                else{
+                    Toast.makeText(this,"You are now driving! It is not safe to use this infotainment system.", Toast.LENGTH_SHORT).show();
                 }
                 break;
 

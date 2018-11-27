@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#1f0033"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Language"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="30dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brightness"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="89dp" />
+
+    <Button
+        android:id="@+id/english"
+        android:layout_width="84dp"
+        android:layout_height="44dp"
+        android:background="@drawable/background_gear_button"
+        android:text="English"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/español"
+        android:layout_width="86dp"
+        android:layout_height="46dp"
+        android:background="@drawable/background_gear_button"
+        android:text="Español"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        tools:layout_editor_absoluteX="314dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/temp_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperature Units"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="280dp"
+        android:layout_height="32dp"
+        tools:layout_editor_absoluteX="222dp"
+        tools:layout_editor_absoluteY="89dp" />
+
+</android.support.constraint.ConstraintLayout>

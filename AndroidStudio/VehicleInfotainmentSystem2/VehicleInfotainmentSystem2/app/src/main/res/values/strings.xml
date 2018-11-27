@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VehicleInfotainmentSystem</string>
+    <string name="app_name" translatable="false">VehicleInfotainmentSystem</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_hvaccontroller">HVACController</string>
     <string name="title_activity_weather_">Weather_Activity</string>
